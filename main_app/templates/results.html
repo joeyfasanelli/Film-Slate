@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} 
+Results
+{% endblock %} 
+
+{% block content %} 
+<br></br>
+<div class="row">
+  {% for d in data.results %}
+    {% if d.poster_path %}
+      <div class="card border-secondary" style="width: 18rem; margin: 0 auto 30px; padding: 0px;">
+        <img class="card-img-top rounded" style="height: 100%;" src="https://image.tmdb.org/t/p/original/{{ d.poster_path }}" alt="">
+        <a href="/{{type}}/{{ d.id }}/" class="stretched-link"></a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endblock %}
