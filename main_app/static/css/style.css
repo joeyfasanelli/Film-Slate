@@ -1,4 +1,22 @@
-    .image-hover:hover {
-        filter: brightness(120%);
-        transition: filter 0.3s ease;
-    }
+.image-hover:hover {
+    filter: brightness(120%);
+    transition: filter 0.3s ease;
+}
+
+.box {
+    height: 30px;
+    display: flex;
+    padding: 10px 10px;
+    background: #fff;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.box input {
+    width: 120px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    background: transparent
+}
