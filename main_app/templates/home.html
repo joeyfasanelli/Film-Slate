@@ -1,19 +1,50 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="display: flex; margin: 0 auto; justify-content: center; background-color: rgb(24, 22, 34); ">
-    <div style="position: relative; display: inline-block; background: linear-gradient()">
-        <img src="https://i.imgur.com/vGEacE0.jpg" alt="image" style="max-width: 100%;" class="rounded">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(24, 22, 34, 1), rgba(24, 22, 34, 0) 20%)"></div>
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, rgb(34, 22, 52, 1), rgb(34, 22, 52, 0) 30%)"></div>
+<div style="position: relative; background-color: rgb(24, 22, 34); width: 2560px; height: 849px; overflow: hidden; right: 50%; bottom: 100px; ">
+    <img src="https://i.imgur.com/vGEacE0.jpg" alt="image" style="width: 100%; height: 100%; object-fit: cover;" class="rounded">
+    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; pointer-events: none; background: radial-gradient(74.03% 43% at 50% 52.52%, rgba(28, 22, 41, 0.35) 68.05%, #1c1629 110%)"></div>
+    <h1 class="text-center" style="position: absolute; top: 55%; left: 50.6%; transform: translate(-50%, -50%); z-index: 1; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Discover movies that inspire.</h1>
+    <h4 class="text-center" style="position: absolute; top: 63%; left: 50.6%; width: 900px; transform: translate(-50%, -50%); z-index: 1; color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); word-wrap: break-word;">Explore thousands of movies, dive into intriguing plots, and uncover hidden gems. From classics to the latest releases, FilmSlate is your portal to film nirvana.</h4>
+    <div style="margin: auto; text-align: center; position: absolute; top: 70%; left: 47.5%; z-index: 2">
+        <a class="nav-link d-inline-block" style="border: none;
+          border-radius: 2px;
+          display: inline-block;
+          padding: .4em 2.5em;
+          background: #1d8a99;
+          color: #fff;" href="{% url 'about' %}">Learn More</a>
+    </div> 
+</div>
+<div style="position: relative; z-index: 1; margin: 0 auto 30px auto; text-align: center; bottom: 140px">
+    <div style="height: 35px;
+        margin: auto;
+        display: flex;
+        width: 90%;
+        max-width: 500px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 2px;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);">
+        <form action="/search/">
+            <input type="text" placeholder="Begin Your Search..." name="q" style="color: #989ca2; width: 450px;
+                outline: none;
+                border: none;
+                background: transparent;">
+        </form>
     </div>
 </div>
-<br>
-<h1 class="text-center">Discover movies that inspire.</h1>
-<br></br>
-<div id="trendings" class="row">
 
-</div>
+
+
+<!-- Trending Results are listed here -->
+
+<div id="trendings" class="row" style="position: relative; bottom: 130px;"></div>
+
+<!-- Trending Results are listed here -->
+
+
 
 <script>
     fetch("/api/trendings")
@@ -22,7 +53,7 @@
         for (let i=0; i<data.results.length; i++){
             var mainDiv = document.createElement("div");
             mainDiv.setAttribute("class", "card text-black border-secondary");
-            mainDiv.setAttribute("style", "width: 18rem; margin: 0 auto 30px; padding: 0px");
+            mainDiv.setAttribute("style", "width: 18rem; margin: 0 auto 40px; padding: 0px;");
             mainDiv.classList.add("image-hover");
             var img = document.createElement("img");
             img.setAttribute("src", "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path);

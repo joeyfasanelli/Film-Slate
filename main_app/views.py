@@ -14,20 +14,14 @@ import requests
 
 # API Search Query with TMDB API
 
-
 def search(request):
-  query = request.GET.get('q')
+    query = request.GET.get('q')
 
-  if query:
-    data = requests.get(f"https://api.themoviedb.org/3/search/movie?api_key=27866702f39bce28cfa7752a49f16399&language=en-US&page=1&include_adult=false&query={query}")
-
-
-  else:
-    return HttpResponse("Please enter a search query")
-  
-  return render(request, "results.html", {'data': data.json(), "type": request.GET.get('type')})
-
-
+    if query:
+        data = requests.get(f"https://api.themoviedb.org/3/search/movie?api_key=27866702f39bce28cfa7752a49f16399&language=en-US&page=1&include_adult=false&query={query}")
+        return render(request, "results.html", {'data': data.json(), 'query': query, 'type': request.GET.get('type')})
+    else:
+        return HttpResponse("Please enter a search query")
 
 
 # APP ROUTES

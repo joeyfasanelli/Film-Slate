@@ -14,11 +14,14 @@
     <script src="https://kit.fontawesome.com/5e14b28010.js" crossorigin="anonymous"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+      body {
+        scrollbar-color: rgb(107, 107, 107) rgb(41, 41, 41);
+      }
     </style>
   </head>
-  <body class="text-white" style="background-image: linear-gradient(rgb(22, 22, 31), #231735, #140c0b); background-repeat: no-repeat; background-attachment: fixed; font-family: 'Nunito Sans', sans-serif;">
+  <body class="text-white" style="background-color:#1c1629; background-repeat: no-repeat; background-attachment: fixed; font-family: 'Nunito Sans', sans-serif;">
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent; margin-left: 100px; margin-right: 100px; margin-top: 20px; z-index: 2">
   <div class="container-fluid">
     <a class="navbar-brand" style="font-size: 32px" href="/">FilmSlate</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,15 +29,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link d-inline-block" href="/about">About</a>
-        </li>
-        {% if user.is_authenticated %}
+        </li> -->
+        <!-- {% if user.is_authenticated %} -->
         
         <!-- <li class="nav-item">
           <a class="nav-link" href="/movies">My Watched Movies</a>
         </li> -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link d-inline-block" href="{% url 'logout' %}">Log Out</a>
         </li>
         {% else %}
@@ -43,8 +46,8 @@
         </li>
         <li class="nav-item">
           <a class="nav-link d-inline-block" href="{% url 'signup' %}">Sign Up</a>
-        </li>
-        {% endif %}
+        </li> -->
+        <!-- {% endif %} -->
         <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
@@ -54,33 +57,19 @@
           </div>
         </li> -->
       </ul>
-      <div class="box" style="height: 30px;
-      display: flex;
-      width: 170px;
-      padding: 10px 10px;
-      background: #fff;
-      border-radius: 30px;
-      align-items: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3)">
-        <form action="/search/">
-        <input type="text" placeholder="" name="q" style="color: #989ca2; width: 120px;
-        outline: none;
-        border: none;
-        font-weight: 500;
-        background: transparent">
-        <button style="background: none; color: inherit; border: none; padding: 0; font: inherit; cursor: pointer; outline: inherit;">
-          <i class="fa-solid fa-magnifying-glass" style="color: #b6bac2;"></i>
-        </button>
-      </input>
-        </form>
-      <div>
-    </div>
-  </div>
+        <li class="nav-item list-unstyled">
+          <a class="nav-link d-inline-block" style="border: none;
+          border-radius: 30px;
+          display: inline-block;
+          padding: .5em 1.5em;
+          background: #00c030;
+          color: #fff;" href="{% url 'signup' %}">Create an Account</a>
+        </li>
 </nav>
     </header>
     <main class="container" >{% block content %} {% endblock %}</main>
     <footer class="footer">
-      <div class="col-md-8 offset-md-5"> 
+      <div class="d-flex justify-content-center"> 
         All Rights Reserved © 2022 FilmSlate
       </div>
     </footer>
