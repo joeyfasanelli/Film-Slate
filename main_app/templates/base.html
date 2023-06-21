@@ -21,51 +21,26 @@
   </head>
   <body class="text-white" style="background-color:#1c1629; background-repeat: no-repeat; background-attachment: fixed; font-family: 'Nunito Sans', sans-serif;">
     <header>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent; margin-left: 100px; margin-right: 100px; margin-top: 20px; z-index: 2">
-  <div class="container-fluid">
-    <a class="navbar-brand" style="font-size: 32px" href="/">FilmSlate</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <!-- <li class="nav-item">
-          <a class="nav-link d-inline-block" href="/about">About</a>
-        </li> -->
-        <!-- {% if user.is_authenticated %} -->
-        
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="/movies">My Watched Movies</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link d-inline-block" href="{% url 'logout' %}">Log Out</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link d-inline-block" href="{% url 'login' %}">Log In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d-inline-block" href="{% url 'signup' %}">Sign Up</a>
-        </li> -->
-        <!-- {% endif %} -->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Sign In</a>
-            <a class="dropdown-item" href="#">Sign Out</a>
-            <a class="dropdown-item" href="#">My Account</a>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent; margin-top: 20px; z-index: 2">
+        <div class="container">
+          <a class="navbar-brand" style="font-size: 32px" href="/">FilmSlate</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" style="border: none;
+                border-radius: 30px;
+                display: inline-block;
+                padding: .5em 1.5em;
+                background: #00c030;
+                color: #fff;" href="{% url 'signup' %}">Create an Account</a>
+              </li>
+            </ul>
           </div>
-        </li> -->
-      </ul>
-        <li class="nav-item list-unstyled">
-          <a class="nav-link d-inline-block" style="border: none;
-          border-radius: 30px;
-          display: inline-block;
-          padding: .5em 1.5em;
-          background: #00c030;
-          color: #fff;" href="{% url 'signup' %}">Create an Account</a>
-        </li>
-</nav>
+        </div>
+      </nav>         
     </header>
     <main class="container" >{% block content %} {% endblock %}</main>
     <footer class="footer">
