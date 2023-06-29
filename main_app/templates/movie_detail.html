@@ -1,15 +1,14 @@
 {% extends 'base.html' %} 
 
-{% block title %} 
-Results
-{% endblock %} 
-
 {% block content %} 
-<div style="position: relative; background-color: rgb(24, 22, 34); width: 2565px; height: 649px; overflow: hidden; right: 50%; bottom: 100px; ">
-    <img src="https://i.imgur.com/vGEacE0.jpg" alt="image" style="width: 100%; height: 100%; object-fit: cover;" class="rounded">
-    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; pointer-events: none; background: radial-gradient(74.03% 43% at 50% 52.52%, rgba(28, 22, 41, 0.35) 68.05%, #1c1629 110%)"></div>
+<div style="position: relative; background-color: rgb(24, 22, 34); width: 100%; height: 100%; overflow: hidden; ">
+    <img src="https://image.tmdb.org/t/p/original{{ data.backdrop_path }}" alt="image" style="width: 100%; height: 100%; object-fit: cover;" class="rounded">
+    <div style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 100%; pointer-events: none; background: 
+    linear-gradient(90deg, #1c1629 0, rgba(28, 22, 41, 0.986) 0.97%, rgba(28, 22, 41, 0.945) 2.07833333%, rgba(28, 22, 41, 0.883) 3.29666667%, rgba(28, 22, 41, 0.803) 4.60166667%, rgba(28, 22, 41, 0.711) 5.96666667%, rgba(28, 22, 41, 0.61) 7.365%, rgba(28, 22, 41, 0.504) 8.77166667%, rgba(28, 22, 41, 0.398) 10.16%, rgba(28, 22, 41, 0.296) 11.505%, rgba(28, 22, 41, 0.203) 12.78%, rgba(28, 22, 41, 0.122) 13.95833333%, rgba(28, 22, 41, 0.059) 15.01666667%, rgba(28, 22, 41, 0.016) 15.92833333%, rgba(28, 22, 41, 0) 16.66666667%, rgba(28, 22, 41, 0) 83.33333333%, rgba(28, 22, 41, 0.016) 84.07166667%, rgba(28, 22, 41, 0.059) 84.98333333%, rgba(28, 22, 41, 0.122) 86.04166667%, rgba(28, 22, 41, 0.203) 87.22%, rgba(28, 22, 41, 0.296) 88.495%, rgba(28, 22, 41, 0.398) 89.84%, rgba(28, 22, 41, 0.504) 91.22833333%, rgba(28, 22, 41, 0.61) 92.635%, rgba(28, 22, 41, 0.711) 94.03333333%, rgba(28, 22, 41, 0.803) 95.39833333%, rgba(28, 22, 41, 0.883) 96.70333333%, rgba(28, 22, 41, 0.945) 97.92166667%, rgba(28, 22, 41, 0.986) 99.03%, #1c1629),
+
+    linear-gradient(0deg, #1c1629 0, #1c1629 15.36111111%, rgba(28, 22, 41, 0.986) 16.97777778%, rgba(28, 22, 41, 0.945) 18.825%, rgba(28, 22, 41, 0.883) 20.60555556%, rgba(28, 22, 41, 0.803) 22.48055556%, rgba(28, 22, 41, 0.711) 24.40555556%, rgba(28, 22, 41, 0.61) 26.37916667%, rgba(28, 22, 41, 0.504) 28.39907407%, rgba(28, 22, 41, 0.398) 30.46759259%, rgba(28, 22, 41, 0.296) 32.58472222%, rgba(28, 22, 41, 0.203) 34.75092593%, rgba(28, 22, 41, 0.122) 36.96759259%, rgba(28, 22, 41, 0.059) 39.23611111%, rgba(28, 22, 41, 0.016) 41.55740741%, rgba(28, 22, 41, 0) 43.93333333%)"></div>
 </div>
-<div style="display: flex; align-items: flex-start; justify-content: center; margin-top: -60px">
+<div style="display: flex; align-items: flex-start; justify-content: center; margin-top: 60px">
     <img src="https://image.tmdb.org/t/p/w500{{ data.poster_path }}" alt="..." style="width: 18rem; margin: 0 30px 30px 0; padding: 0;" class="card-img-top rounded">
     <div>
       <h1>{{data.title}}</h1>
